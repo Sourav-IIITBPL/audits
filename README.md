@@ -32,11 +32,12 @@ A complete list of all my audits.
 
 | Platform | Protocol | Protocol Type | H/M | Rank | Result |
 |---------|------------------|------------------|-----|------|--------|
+| Cantina | [VII-Finance] | AMM / Lending Protocol| 1 | --  | [↗]|
+| Sherlock | [Flying Tulip](https://audits.sherlock.xyz/contests/1223) | Spot Trading/ lending | -- | 213 | [↗](https://audits.sherlock.xyz/contests/1223) |
 | Code4rena | [Hybra Finance](https://code4rena.com/audits/2025-10-hybra-finance) | DEX Infrastructure | 1 | 31 | [↗](https://code4rena.com/audits/2025-10-hybra-finance) |
 | Sherlock | [Super DCA Liquidity Network](https://audits.sherlock.xyz/contests/1171) | DCA / Liquidity Network | 1 | 52 | [↗](https://audits.sherlock.xyz/contests/1171) |
 | Sherlock | [Ammplify](https://audits.sherlock.xyz/contests/1054) | AMM / Maker Protocol | 1 | 75 | [↗](https://audits.sherlock.xyz/contests/1054) |
 | Sherlock | [USG – Tangent](https://audits.sherlock.xyz/contests/1073) | Staking | 1 | 62 | [↗](https://audits.sherlock.xyz/contests/1073) |
-| Cantina | [VII-Finance] | AMM / Lending Protocol| 1 |  | [↗]|
 
 ---
 
