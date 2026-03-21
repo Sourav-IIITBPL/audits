@@ -36,14 +36,15 @@ A complete list of all my audits.
 | Sherlock | [Super DCA Liquidity Network](https://audits.sherlock.xyz/contests/1171) | DCA / Liquidity Network | 1 | 52 | [↗](https://audits.sherlock.xyz/contests/1171) |
 | Sherlock | [Ammplify](https://audits.sherlock.xyz/contests/1054) | AMM / Maker Protocol | 1 | 75 | [↗](https://audits.sherlock.xyz/contests/1054) |
 | Sherlock | [USG – Tangent](https://audits.sherlock.xyz/contests/1073) | Staking | 1 | 62 | [↗](https://audits.sherlock.xyz/contests/1073) |
+| Cantina | [VII-Finance] | AMM / Lending Protocol| 1 |  | [↗]|
 
 ---
 
 ## Summary
 
-- **Validated findings:** 4  
+- **Validated findings:** 5  
   - High severity: 2  
-  - Medium severity: 2  
+  - Medium severity: 3  
 - Platforms: **Sherlock, Code4rena, Cantina**
 - Focus areas: **Accounting correctness, mathematical invariants, protocol safety under edge conditions**
 

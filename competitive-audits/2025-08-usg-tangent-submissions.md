@@ -18,19 +18,19 @@ In
 `totalCollateral == 0`.
 
 i.e. current code:
-
+```solidity
     if (totalCollateral != 0) { 
         /* update rewardPerTokenStored, lastUpdateTime, rewards[...] */ 
     } 
     // otherwise do nothing
-
+```
 `RewardAccumulator._rewardPerToken(address market, IERC20 _rewardToken, uint256 totalCollateral)`
 #116 computes:
-
+```solidity
     rewardPerTokenStored + 
     (((_lastTimeRewardApplicable(periodFinish) - lastUpdateTime) 
     * rewardRate * 1e18) / totalCollateral)
-
+```
 which divides the whole elapsed emission period by the current
 `totalCollateral`. If `totalCollateral` is tiny at the time of the first
 update, the delta is massively amplified.
@@ -283,16 +283,16 @@ calculation uses integer division and drops the remainder, and that
 remainder is never stored or carried forward. Concretely:
 
 In `RewardAccumulator._rewardPerToken(...)` the delta Δt is computed as:
-
+```solidity
     (((_lastTimeRewardApplicable(rewardData[market][_rewardToken].periodFinish) - 
     rewardData[market][_rewardToken].lastUpdateTime) *  
     rewardData[market][_rewardToken].rewardRate *  
     1e18) / totalCollateral);
-
+```
 which floors any fractional remainder;
 
 In `_updateReward(...)` the code writes:
-
+```solidity
     rewardData[market][token].rewardPerTokenStored = _rewardPerToken(...);  
     rewardData[market][token].lastUpdateTime = _lastTimeRewardApplicable(...);  
       
@@ -300,17 +300,17 @@ In `_updateReward(...)` the code writes:
         rewards[market][account][token] = _earned(...);  
         userRewardPerTokenPaid[market][account][token] = rewardData[market][token].rewardPerTokenStored;  
     }
-
+```
 No variable stores the dropped:
-
+```solidity
     (Δt * rewardRate * 1e18) % totalCollateral
-
+```
 remainder --- it is lost from the ledger.
 
 The user accrual formula `_earned(...)` also truncates:
-
+```solidity
     (_balance * (rewardPerTokenNew - userPaid)) / 1e18 + rewards[...];
-
+```
 So per-user amounts are further floored.
 
 Because `processRewards(...)` claims real tokens from underlying
