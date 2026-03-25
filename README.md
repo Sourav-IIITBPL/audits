@@ -1,4 +1,4 @@
-# Hello 👋
+# Hello !!
 
 I’m **Sourav Yadav**, a smart contract security researcher and competitive auditor, currently an engineering student at **IIIT Bhopal, India**.
 
@@ -32,7 +32,7 @@ A complete list of all my audits.
 
 | Platform | Protocol | Protocol Type | H/M | Rank | Result |
 |---------|------------------|------------------|-----|------|--------|
-| Cantina | [VII-Finance] | AMM / Lending Protocol| 1 | --  | [↗]|
+| Cantina | [VII-Finance](https://cantina.xyz/code/eb93d215-e328-4d19-99ab-6c510acbb5aa/overview/leaderboard) | AMM / Lending Protocol| 1 | 25  | [↗](https://cantina.xyz/code/eb93d215-e328-4d19-99ab-6c510acbb5aa/overview/leaderboard)|
 | Sherlock | [Flying Tulip](https://audits.sherlock.xyz/contests/1223) | Spot Trading/ lending | -- | 213 | [↗](https://audits.sherlock.xyz/contests/1223) |
 | Code4rena | [Hybra Finance](https://code4rena.com/audits/2025-10-hybra-finance) | DEX Infrastructure | 1 | 31 | [↗](https://code4rena.com/audits/2025-10-hybra-finance) |
 | Sherlock | [Super DCA Liquidity Network](https://audits.sherlock.xyz/contests/1171) | DCA / Liquidity Network | 1 | 52 | [↗](https://audits.sherlock.xyz/contests/1171) |
