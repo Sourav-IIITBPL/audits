@@ -2,9 +2,20 @@
 
 I’m **Sourav Yadav**, a smart contract security researcher and competitive auditor, currently an engineering student at **IIIT Bhopal, India**.
 
-I actively audit DeFi and protocol-layer smart contracts across leading competitive platforms, with a strong focus on **high-impact, systemic vulnerabilities**. My work primarily targets **protocol accounting invariants, share–asset conversions, rounding and precision errors, denial-of-service vectors, and state-dependent execution failures**.
+I actively audit DeFi and protocol-layer smart contracts across leading competitive platforms, with particular focus on **identifying high-impact vulnerabilities involving:**
 
-I am particularly interested in issues that emerge only under realistic protocol evolution (interest accrual, virtual balances, sequencing assumptions), where subtle design flaws result in user-facing or protocol-level breakage.
+- accounting inconsistencies
+- protocol insolvency paths
+- oracle manipulation/failure modes
+- liquidation edge cases
+- rounding / precision loss
+- ERC4626 / ERC7540 vault risks
+- AMM invariant violations
+- asynchronous state desynchronization
+- execution ordering / sequencing flaws
+- denial-of-service attack surfaces
+
+"I am particularly interested in vulnerabilities that emerge under realistic protocol evolution—such as interest accrual, virtual balance mechanics, and sequencing assumptions—where subtle design flaws can escalate into user-facing breakage or protocol-level failures."
 
 ---
 
@@ -26,9 +37,7 @@ I’m open to:
 
 ---
 
-## Public Contest 
-
-A complete list of all my audits.
+## Featured Public Contest
 
 | Platform | Protocol | Protocol Type | H/M | Rank | Result |
 |---------|------------------|------------------|-----|------|--------|
@@ -41,15 +50,48 @@ A complete list of all my audits.
 
 ---
 
+## Competitive Audit Archive
+
+A complete archive of my competitive smart contract audit submissions across Sherlock, Code4rena, and Cantina can be found here:
+
+📂 [`competitive-audits/`](./competitive-audits)
+
+---
+
 ## Summary
 
-- **Validated findings:** 10  
-  - High severity: 2  
-  - Medium severity: 3
-  - Low Severity: 5 
-- Platforms: **Sherlock, Code4rena, Cantina**
-- Focus areas: **Accounting correctness, mathematical invariants, protocol safety under edge conditions**
+**Contest Platforms**
+- Sherlock
+- Code4rena
+- Cantina
 
+**Protocol Categories Audited**
+- lending
+- stablecoins
+- AMMs
+- DEX infrastructure
+- vaults
+- staking systems
+- cross-chain architectures
+
+**Core Security Skills**
+- invariant analysis
+- protocol threat modeling
+- exploit path reasoning
+- Solidity code review
+- economic attack analysis
+- state machine auditing
+- asynchronous execution review
+
+---
+
+## Current Stats
+
+- **Total Competitive Audits Completed:** 20
+- **Total Validated Findings:** 11
+  - **High Severity:** 2
+  - **Medium Severity:** 3
+  - **Low Severity:** 6
 ---
 
 *If you are building or maintaining a protocol where correctness matters under real-world conditions, I’m happy to collaborate.*

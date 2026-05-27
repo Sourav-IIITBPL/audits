@@ -343,7 +343,7 @@ function initialize(
 
 ---
 
-## ⚠️ Attack Capabilities
+## Attack Capabilities
 
 An attacker can:
 
@@ -359,25 +359,25 @@ An attacker can:
 
 ##  Root Causes
 
-### 1️⃣ Public Initialization
+### Public Initialization
 - No `msg.sender == factory` restriction.
 - Once initialized, the pool becomes immutable.
 
-### 2️⃣ Deterministic Clone Addresses
+### Deterministic Clone Addresses
 - Salt: `keccak256(token0, token1, tickSpacing)`
 - Addresses are **fully predictable**.
 
-### 3️⃣ Arbitrary Price Initialization
+### Arbitrary Price Initialization
 - `_sqrtPriceX96` directly controls tick.
 - Extreme values break LP bootstrapping.
 
-### 4️⃣ Single Canonical Pool Slot
+### Single Canonical Pool Slot
 - Only one pool per `(token0, token1, tickSpacing)`.
 - Pre-initialization permanently blocks the slot.
 
 ---
 
-## 🧨 Step-by-Step Attack Path
+## Step-by-Step Attack Path
 
 **Scenario:** Block pool for `(tokenA, tokenB)` at `tickSpacing = 50`.
 
@@ -409,7 +409,7 @@ CLPool(clone).initialize(
 
 ---
 
-## 📉 Concrete Economic Impact
+## Concrete Economic Impact
 
 - Attacker initializes pool at:
   - `1 tokenA ≈ 1,000,000 tokenB`
@@ -421,20 +421,20 @@ CLPool(clone).initialize(
 
 ---
 
-## 📊 Impact Assessment
+## Impact Assessment
 
 | Severity | Impact |
 |-------|-------|
-| 🔴 High | Permanent DoS on canonical pool creation |
-| 🔴 High | Price manipulation & arbitrage |
-| 🟠 Medium | Corrupted downstream protocol state |
-| 🟠 Medium | Manual admin intervention required |
+| High | Permanent DoS on canonical pool creation |
+| High | Price manipulation & arbitrage |
+| Medium | Corrupted downstream protocol state |
+| Medium | Manual admin intervention required |
 
 ---
 
-## 🛠️ Recommended Mitigations
+## Recommended Mitigations
 
-### ✅ Restrict Initialization to Factory
+### Restrict Initialization to Factory
 
 ```solidity
 function initialize(...) external override {
@@ -444,7 +444,7 @@ function initialize(...) external override {
 }
 ```
 
-### 🔐 Optional: Restrict Pool Creation
+###  Optional: Restrict Pool Creation
 
 ```solidity
 function createPool(...) external onlyOwner returns (address pool) {
@@ -452,16 +452,16 @@ function createPool(...) external onlyOwner returns (address pool) {
 }
 ```
 
-### 📏 Sanity Checks on Initial Price
+### Sanity Checks on Initial Price
 - Bound `_sqrtPriceX96` to reasonable ranges.
 - Reference oracle or TWAP.
 
-### 🔁 Consider Multiple Pools per Tick
+### Consider Multiple Pools per Tick
 - Prevents permanent slot monopolization.
 
 ---
 
-## 🧪 Proof of Concept
+## Proof of Concept
 
 **Location:** `cl/test/C4PoC.t.sol`
 
@@ -473,14 +473,14 @@ function createPool(...) external onlyOwner returns (address pool) {
 forge test --mt test_preclone_block_and_economicImpact -vvv
 ```
 
-✔ Demonstrates:
+ Demonstrates:
 - Pool slot hijacking
 - Failed legitimate creation
 - Extreme liquidity skew
 
 ---
 
-## ✅ Conclusion
+## Conclusion
 
 This is a **high-severity architectural vulnerability** enabling:
 - Permanent denial-of-service
