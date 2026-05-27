@@ -43,9 +43,10 @@ A complete list of all my audits.
 
 ## Summary
 
-- **Validated findings:** 5  
+- **Validated findings:** 10  
   - High severity: 2  
-  - Medium severity: 3  
+  - Medium severity: 3
+  - Low Severity: 5 
 - Platforms: **Sherlock, Code4rena, Cantina**
 - Focus areas: **Accounting correctness, mathematical invariants, protocol safety under edge conditions**
 
