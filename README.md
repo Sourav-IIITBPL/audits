@@ -87,7 +87,7 @@ A complete archive of my competitive smart contract audit submissions across She
 
 ## Current Stats
 
-- **Total Competitive Audits Completed:** 20
+- **Total Competitive Audits Completed:** 21
 - **Total Validated Findings:** 11
   - **High Severity:** 2
   - **Medium Severity:** 3
