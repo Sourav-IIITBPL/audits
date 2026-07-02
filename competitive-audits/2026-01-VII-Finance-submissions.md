@@ -1,4 +1,4 @@
-# S1 - Broken yield smoothing invariant enables jit liquidity exploitation
+# M1 - Broken yield smoothing invariant enables jit liquidity exploitation
 
 ## Summary
 
